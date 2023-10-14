@@ -13,7 +13,7 @@ export const theme = {
     fonts: {
         roboto: {
             name: 'Roboto',
-            sizes: {
+            weights: {
                 400: 400,
                 700: 700,
             },
