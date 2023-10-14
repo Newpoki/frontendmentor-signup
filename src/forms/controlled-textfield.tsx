@@ -1,5 +1,5 @@
 import { Textfield, TextfieldProps } from '../ui-kit/components/textfield'
-import { useFormContext } from 'react-hook-form'
+import { Controller, useFormContext } from 'react-hook-form'
 
 type Props = Omit<
     TextfieldProps,
@@ -19,8 +19,22 @@ type Props = Omit<
     name: string
 }
 
-export const ControlledTextfield = ({ name, ...others }: Props) => {
-    const { register } = useFormContext()
+export const ControlledTextfield = ({ name, helperText, ...others }: Props) => {
+    const { control } = useFormContext()
 
-    return <Textfield {...register(name)} {...others} name={name} />
+    return (
+        <Controller
+            control={control}
+            name={name}
+            render={({ field, fieldState: { error } }) => (
+                <Textfield
+                    {...others}
+                    {...field}
+                    hasError={error?.message != null}
+                    name={name}
+                    helperText={error?.message ?? helperText}
+                />
+            )}
+        />
+    )
 }

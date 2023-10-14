@@ -7,7 +7,7 @@ import {
 
 type Props<TFieldValues extends FieldValues> = Omit<
     React.HTMLAttributes<HTMLFormElement>,
-    'onSubmit'
+    'onSubmit' | 'noValidate'
 > & {
     onSubmit: SubmitHandler<TFieldValues>
     formContext: UseFormReturn<TFieldValues>
@@ -20,7 +20,7 @@ export function FormProvider<TFieldValues extends FieldValues>({
 }: Props<TFieldValues>) {
     return (
         <RHFFormProvider {...formContext}>
-            <form {...others} onSubmit={formContext.handleSubmit(onSubmit)} />
+            <form {...others} noValidate onSubmit={formContext.handleSubmit(onSubmit)} />
         </RHFFormProvider>
     )
 }

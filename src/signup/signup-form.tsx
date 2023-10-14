@@ -5,6 +5,7 @@ import { useCallback } from 'react'
 import z from 'zod'
 import { ControlledTextfield } from '../forms/controlled-textfield'
 import { FormProvider } from '../forms/form-provider'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 const signupFormSchema = z.object({
     email: z.string().email('Valid email required'),
@@ -12,8 +13,16 @@ const signupFormSchema = z.object({
 
 type SignupFormValues = z.infer<typeof signupFormSchema>
 
+const signupFormDefaultValues: SignupFormValues = {
+    email: '',
+}
+
 export const SignupForm = () => {
-    const formContext = useForm<SignupFormValues>()
+    const formContext = useForm<SignupFormValues>({
+        defaultValues: signupFormDefaultValues,
+        shouldUseNativeValidation: false,
+        resolver: zodResolver(signupFormSchema),
+    })
 
     const handleSubmit = useCallback(() => {
         console.log('submit')
@@ -25,6 +34,7 @@ export const SignupForm = () => {
                 name="email"
                 placeholder="email@company.com"
                 label="Email address"
+                type="email"
             />
 
             <Button>Subscribe to monthly newsletter</Button>
