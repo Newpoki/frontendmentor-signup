@@ -58,7 +58,7 @@ const HelperText = styled.span<{ $hasError: boolean }>`
 const Input = styled.input<{ $hasError: boolean }>`
     border: ${({ theme }) => `1px solid hsl(${theme.colors.neutral.grey}, 40%)`};
     border-radius: 8px;
-    padding: 16px 20px;
+    padding: 20px;
     font-family: ${({ theme }) => theme.fonts.roboto.name};
     font-size: 14px;
     outline: none;
