@@ -1,3 +1,9 @@
+import { Signup } from './signup/signup'
+
 export const App = () => {
-    return <div>app</div>
+    return (
+        <>
+            <Signup />
+        </>
+    )
 }

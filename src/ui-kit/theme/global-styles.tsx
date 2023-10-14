@@ -1,11 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
-    body {
-        font-family: ${({ theme }) => theme.fonts.roboto.name};
+    body  {
         font-size: 16px;
         font-weight: ${({ theme }) => theme.fonts.roboto.weights[400]};
-        background-color: ${({ theme }) => theme.colors.neutral.charcoalGrey};
-        color: ${({ theme }) => theme.colors.neutral.charcoalGrey};
+        background-color: ${({ theme }) => `hsl(${theme.colors.neutral.charcoalGrey})`};
+        color: ${({ theme }) => `hsl(${theme.colors.neutral.charcoalGrey})`};
+        font-family: ${({ theme }) => theme.fonts.roboto.name};
     }
 `
