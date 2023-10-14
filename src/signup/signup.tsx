@@ -6,6 +6,7 @@ import { SignupForm } from './signup-form'
 import { Views } from '../types/app'
 import { Page } from '../ui-kit/components/page'
 import { Title } from '../ui-kit/components/title'
+import { useEffect } from 'react'
 
 type Props = {
     setView: React.Dispatch<React.SetStateAction<Views>>
@@ -13,6 +14,10 @@ type Props = {
 
 export const Signup = ({ setView }: Props) => {
     const theme = useTheme()
+
+    useEffect(() => {
+        document.title = 'Newsletter - Signup'
+    }, [])
 
     return (
         <Root>

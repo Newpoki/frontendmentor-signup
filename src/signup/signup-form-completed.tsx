@@ -2,7 +2,7 @@ import { Page } from '../ui-kit/components/page'
 import SuccessIcon from '../ui-kit/assets/icon-success.svg'
 import { Button } from '../ui-kit/components/button'
 import styled, { css } from 'styled-components'
-import { useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
 import { Views } from '../types/app'
 import { Title } from '../ui-kit/components/title'
 import { Text } from '../ui-kit/components/text'
@@ -16,6 +16,10 @@ export const SignupFormCompleted = ({ email, setView }: Props) => {
     const handleDismiss = useCallback(() => {
         setView({ type: 'SIGNUP_FORM' })
     }, [setView])
+
+    useEffect(() => {
+        document.title = 'Newsletter - Success signup'
+    }, [])
 
     return (
         <Root>
