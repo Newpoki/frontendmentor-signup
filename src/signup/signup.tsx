@@ -3,8 +3,15 @@ import MobileIllustration from '../ui-kit/assets/illustration-sign-up-mobile.svg
 import DesktopIllustration from '../ui-kit/assets/illustration-sign-up-desktop.svg'
 import { FeatureListItem } from '../ui-kit/components/feature-list-item'
 import { SignupForm } from './signup-form'
+import { Views } from '../types/app'
+import { Page } from '../ui-kit/components/page'
+import { Title } from '../ui-kit/components/title'
 
-export const Signup = () => {
+type Props = {
+    setView: React.Dispatch<React.SetStateAction<Views>>
+}
+
+export const Signup = ({ setView }: Props) => {
     const theme = useTheme()
 
     return (
@@ -30,24 +37,21 @@ export const Signup = () => {
                     <FeatureListItem>And much more!</FeatureListItem>
                 </FeatureList>
 
-                <SignupForm />
+                <SignupForm setView={setView} />
             </Content>
         </Root>
     )
 }
 
-const Root = styled.div`
-    background-color: ${({ theme }) => `hsl(${theme.colors.neutral.white})`};
+const Root = styled(Page)`
     display: flex;
     flex-direction: column;
 
     ${({ theme }) => css`
         @media screen and (min-width: ${theme.breakpoints.desktop}px) {
             flex-direction: row-reverse;
+
             width: 900px;
-            margin: auto;
-            border-radius: 32px;
-            padding: 24px;
         }
     `}
 `
@@ -67,18 +71,6 @@ const Content = styled.article`
     ${({ theme }) => css`
         @media screen and (min-width: ${theme.breakpoints.desktop}px) {
             padding: 70px;
-        }
-    `}
-`
-
-const Title = styled.h1`
-    color: ${({ theme }) => `hsl(${theme.colors.neutral.charcoalGrey})`};
-    font-size: 40px;
-    font-weight: ${({ theme }) => theme.fonts.roboto.weights[700]};
-
-    ${({ theme }) => css`
-        @media screen and (min-width: ${theme.breakpoints.desktop}px) {
-            font-size: 56px;
         }
     `}
 `

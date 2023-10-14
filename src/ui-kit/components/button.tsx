@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-type Props = React.HTMLAttributes<HTMLButtonElement>
+type Props = React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export const Button = (props: Props) => {
     return <Root {...props} />
@@ -10,9 +10,9 @@ const Root = styled.button`
     border: none;
     background-color: ${({ theme }) => `hsl(${theme.colors.neutral.darkSlateGrey})`};
     color: ${({ theme }) => `hsl(${theme.colors.neutral.white})`};
-    padding: 16px 20px;
+    padding: 18px 20px;
     font-weight: ${({ theme }) => theme.fonts.roboto.weights[700]};
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 8px;
 
     &:hover {
