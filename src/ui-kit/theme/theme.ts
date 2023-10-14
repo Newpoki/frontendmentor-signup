@@ -19,6 +19,10 @@ export const theme = {
             },
         },
     },
+    breakpoints: {
+        mobile: 0,
+        desktop: 1440,
+    },
 } as const
 
 export type Theme = typeof theme

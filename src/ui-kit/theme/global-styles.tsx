@@ -8,4 +8,11 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => `hsl(${theme.colors.neutral.charcoalGrey})`};
         font-family: ${({ theme }) => theme.fonts.roboto.name};
     }
+
+    #root {
+        display: flex;
+        flex-direction: column;
+        height: 100dvh;
+        width: 100dvw;
+    }
 `
