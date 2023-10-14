@@ -6,5 +6,6 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 16px;
         font-weight: ${({ theme }) => theme.fonts.roboto.weights[400]};
         background-color: ${({ theme }) => theme.colors.neutral.charcoalGrey};
+        color: ${({ theme }) => theme.colors.neutral.charcoalGrey};
     }
 `
