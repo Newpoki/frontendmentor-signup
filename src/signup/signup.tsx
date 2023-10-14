@@ -29,7 +29,7 @@ export const Signup = ({ setView }: Props) => {
 
                 <img
                     src={MobileIllustration}
-                    width="100%"
+                    style={{ width: '100%' }}
                     alt="An illustration showing fake graphs and values to embed the page"
                 />
             </IllustrationPicture>
