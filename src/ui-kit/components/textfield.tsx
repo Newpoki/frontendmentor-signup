@@ -56,7 +56,7 @@ const HelperText = styled.span<{ $hasError: boolean }>`
 `
 
 const Input = styled.input<{ $hasError: boolean }>`
-    border: ${({ theme }) => `1px solid hsl(${theme.colors.neutral.grey}, 50%)`};
+    border: ${({ theme }) => `1px solid hsl(${theme.colors.neutral.grey}, 40%)`};
     border-radius: 8px;
     padding: 16px 20px;
     font-family: ${({ theme }) => theme.fonts.roboto.name};
@@ -69,6 +69,9 @@ const Input = styled.input<{ $hasError: boolean }>`
         color: ${({ theme }) => `hsl(${theme.colors.neutral.grey})`};
     }
 
+    &:hover {
+        border-color: ${({ theme }) => `hsl(${theme.colors.neutral.charcoalGrey}, 60%)`};
+    }
     &:focus {
         border-color: ${({ theme }) => `hsl(${theme.colors.neutral.charcoalGrey})`};
     }
@@ -78,10 +81,14 @@ const Input = styled.input<{ $hasError: boolean }>`
         css`
             background-color: ${({ theme }) => `hsl(${theme.colors.primary.tomato}, 20%)`};
             color: ${({ theme }) => `hsl(${theme.colors.primary.tomato})`};
-            border-color: ${({ theme }) => `hsl(${theme.colors.primary.tomato})`};
+            border-color: ${({ theme }) => `hsl(${theme.colors.primary.tomato}, 20%)`};
 
             &::placeholder {
                 color: ${({ theme }) => `hsl(${theme.colors.primary.tomato}, 70%)`};
+            }
+
+            &:hover {
+                border-color: ${({ theme }) => `hsl(${theme.colors.primary.tomato}, 60%)`};
             }
 
             &:focus {
