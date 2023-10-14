@@ -6,7 +6,7 @@ export const Page = (props: Props) => {
     return <Root {...props} />
 }
 
-const Root = styled.div`
+const Root = styled.main`
     background-color: ${({ theme }) => `hsl(${theme.colors.neutral.white})`};
     flex: 1;
     display: flex;

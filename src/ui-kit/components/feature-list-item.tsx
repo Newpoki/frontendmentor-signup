@@ -8,7 +8,7 @@ type Props = {
 export const FeatureListItem = ({ children }: Props) => {
     return (
         <Root>
-            <img src={iconList} />
+            <img src={iconList} alt="A white check icon in an orange circle" />
             <p>{children}</p>
         </Root>
     )

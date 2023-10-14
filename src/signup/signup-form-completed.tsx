@@ -23,7 +23,11 @@ export const SignupFormCompleted = ({ email, setView }: Props) => {
 
     return (
         <Root>
-            <SuccessImage src={SuccessIcon} width={64} />
+            <SuccessImage
+                src={SuccessIcon}
+                width={64}
+                alt="A white check icon in an orange circle"
+            />
 
             <StyledTitle>Thanks for subscribing!</StyledTitle>
 
