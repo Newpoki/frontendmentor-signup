@@ -10,4 +10,13 @@ export const theme = {
             white: 'hsl(0, 0%, 100%)',
         },
     },
+    fonts: {
+        roboto: {
+            name: 'Roboto',
+            sizes: {
+                400: 400,
+                700: 700,
+            },
+        },
+    },
 } as const
