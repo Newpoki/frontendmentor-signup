@@ -1,23 +1,26 @@
+import { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
-type Props = React.HTMLAttributes<HTMLInputElement> & {
+export type TextfieldProps = React.InputHTMLAttributes<HTMLInputElement> & {
     helperText?: string
     hasError?: boolean
     label?: React.ReactNode
 }
 
-export const Textfield = ({ label, id, helperText, hasError = false, ...others }: Props) => {
-    return (
-        <Root>
-            <InformationsWrapper>
-                <Label htmlFor={id}>{label}</Label>
+export const Textfield = forwardRef<HTMLInputElement, TextfieldProps>(
+    ({ label, id, helperText, hasError = false, ...others }, ref) => {
+        return (
+            <Root>
+                <InformationsWrapper>
+                    <Label htmlFor={id}>{label}</Label>
 
-                {helperText && <HelperText $hasError={hasError}>{helperText}</HelperText>}
-            </InformationsWrapper>
-            <Input {...others} $hasError={hasError} id={id} />
-        </Root>
-    )
-}
+                    {helperText && <HelperText $hasError={hasError}>{helperText}</HelperText>}
+                </InformationsWrapper>
+                <Input {...others} $hasError={hasError} id={id} ref={ref} />
+            </Root>
+        )
+    }
+)
 
 const Root = styled.div`
     display: flex;
